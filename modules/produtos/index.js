@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const { v4: uuidv4 } = require('uuid')
+import { v4 as uuidv4 } from 'uuid'
 
 const initListaProdutos = () => [
   { id: 1, descricao: "Arroz parboilizado 5Kg", valor: 25.00, marca: "Tio João"  },
@@ -59,4 +59,4 @@ router.delete('/:id', (req, res) => {
   res.status(201).json({message: 'Produto removido com sucesso', produto})
 })
 
-module.exports = router
+export default router
